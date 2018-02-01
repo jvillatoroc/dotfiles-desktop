@@ -1,0 +1,37 @@
+URxvt.scrollstyle:      plain
+URxvt.secondaryScroll:  true
+
+! some colours ----
+
+URxvt.background:       #111111
+URxvt.foreground:       gray90
+
+! make underline lines look different ----
+
+URxvt.underlineColor:   light_gray
+
+! geometry etc settings ---
+
+! URxvt.geometry:         154x36
+URxvt.loginShell:       false
+URxvt.meta:             ignore
+URxvt.utmpInhibit:      true
+
+! Large scrollback buffer ----
+
+URxvt.saveLines:        8192
+
+! Use visual bell, STOP THE INSANITY! ----
+
+URxvt.visualBell:       true
+
+! don t hack me, brah... ----
+
+URxvt.insecure:         true
+
+! Font settings ----
+
+URxvt.font:		xft:DejaVu Sans Mono:size=8:autohint=true
+URxvt.boldFont:         -xos4-terminus-bold-r-normal--14-140-72-72-c-80-iso8859-15
+URxvt.italicFont:       xft:DejaVu Sans Mono:italic:autohint=true
+URxvt.boldItalicFont:   xft:DejaVu Sans Mono:bold:italic:autohint=true
