@@ -99,9 +99,11 @@ set $workspace3 "3: VM"
 
 assign [class="Firefox"] $workspace2
 assign [class="Chromium"] $workspace2
+assign [class="qutebrowser"] $workspace2
 assign [class="Qemu-system-x86_64" instance="qemu-system-x86_64"] $workspace3
 assign [class="Vmware"] $workspace3
 assign [class="VirtualBox"] $workspace3
+assign [class="Virt-manager"] $workspace3
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -171,14 +173,50 @@ client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
+# gaps between windows/containers
+gaps inner 10
+gaps outer 10
+
+##FOR ALSA/AMIXER
+set $inc --no-startup-id amixer sset Master 2%+
+set $biginc --no-startup-id amixer sset Master 5%+
+set $dec --no-startup-id amixer sset Master 2%-
+set $bigdec --no-startup-id amixer sset Master 5%-
+set $mute --no-startup-id amixer sset Master toggle
+set $truemute --no-startup-id amixer sset Master mute
+set $screencast  --no-startup-id bash screencast_alsa.sh
+set $audio --no-startup-id bash audio_alsa.sh
+
+##For PULSEAUDIO/PAMIXER
+#set $inc --no-startup-id pamixer --allow-boost -i 5
+#set $biginc --no-startup-id pamixer --allow-boost -i 15
+#set $dec --no-startup-id pamixer --allow-boost -d 5
+#set $bigdec --no-startup-id pamixer --allow-boost -d 15
+#set $mute --no-startup-id pamixer --allow-boost -t
+#set $micmute --no-startup-id pamixer --allow-boost -t
+#set $truemute --no-startup-id pamixer -m
+#set $screencast  --no-startup-id bash screencast_pulse.sh
+#set $audio --no-startup-id bash audio_pulse.sh
+
+bindsym XF86AudioMute		exec $mute
+bindsym XF86AudioLowerVolume	exec $dec
+bindsym XF86AudioRaiseVolume	exec $inc
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+# bar {
+# 	status_command i3status
+# 	tray_output primary
+# 	position top
+# 
+# 	colors {
+# 		background $bgcolour
+# 	}
+# }
+
+# execute polybar
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
 bar {
-        status_command i3status
-        tray_output primary
-	position top
-	
-	colors {
-		background $bgcolour
-	}
+	i3bar_command $HOME/.config/polybar/launch.sh
 }
