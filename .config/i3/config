@@ -183,7 +183,8 @@ set $biginc --no-startup-id amixer sset Master 5%+
 set $dec --no-startup-id amixer sset Master 2%-
 set $bigdec --no-startup-id amixer sset Master 5%-
 set $mute --no-startup-id amixer sset Master toggle
-set $truemute --no-startup-id amixer sset Master mute
+#set $truemute --no-startup-id amixer sset Master mute
+set $micmute --no-startup-id amixer sset Capture toggle
 set $screencast  --no-startup-id bash screencast_alsa.sh
 set $audio --no-startup-id bash audio_alsa.sh
 
@@ -201,6 +202,7 @@ set $audio --no-startup-id bash audio_alsa.sh
 bindsym XF86AudioMute		exec $mute
 bindsym XF86AudioLowerVolume	exec $dec
 bindsym XF86AudioRaiseVolume	exec $inc
+bindsym XF86AudioMicMute	exec $micmute
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
