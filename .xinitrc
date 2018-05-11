@@ -48,8 +48,8 @@ nm-applet &
 ./.fehbg
 
 # run window manager
-exec mate-session
+# exec mate-session
 # exec awesome
-# exec i3
+exec i3
 # exec startlxqt
 # exec startkde
