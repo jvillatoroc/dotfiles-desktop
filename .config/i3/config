@@ -219,6 +219,12 @@ bindsym XF86AudioMicMute	exec $micmute
 # execute polybar
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+# start compton in the background
+exec compton -b 
+
+# start desktop wallpaper with feh
+exec ./.fehbg
+
 bar {
 	i3bar_command $HOME/.config/polybar/launch.sh
 }
