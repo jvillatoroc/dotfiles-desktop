@@ -29,7 +29,7 @@ font pango:Liberation Mono 10
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-set $term urxvt
+set $term st
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
