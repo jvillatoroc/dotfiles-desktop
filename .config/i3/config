@@ -165,6 +165,8 @@ bindsym $mod+r mode "resize"
 
 set $bgcolour #2f343f
 
+for_window [class="^.*"] border pixel 1
+
 # class                 border  backgr. 	text    indicator child_border
 client.focused          #333333 $bgcolour	#F5DEB3 #2e9ef4   #F5DEB3
 client.focused_inactive #333333 $bgcolour	#ffffff #484e50   #5f676a
