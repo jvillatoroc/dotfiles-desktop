@@ -6,7 +6,7 @@ URxvt.secondaryScroll:  true
 *.background:       #222222
 ! URxvt.foreground:       gray90
 *.foreground:       #e8e9ca
-
+ 
 *color0:	#222222
 *color1:	#8b3e2f
 *color2:	#526f33
@@ -15,7 +15,7 @@ URxvt.secondaryScroll:  true
 *color5:	#7a378b
 *color6:	#528b8b
 *color7:	#999999
-
+ 
 *color8:	#4c4c4c
 *color9:	#d75f00
 *color10:	#cee318
@@ -24,7 +24,6 @@ URxvt.secondaryScroll:  true
 *color13:	#9f79ee
 *color14:	#79cdcd
 *color15:	#e8e9ca
-
 
 ! make underline lines look different ----
 
@@ -51,8 +50,8 @@ URxvt.insecure:         true
 
 ! Font settings ----
 
-! URxvt.font:		xft:DejaVu Sans Mono:size=10:autohint=true
-URxvt.font:		xft:monospace:size=10:autohint=true
+URxvt.font:		xft:Liberation Mono:size=10
+! URxvt.font:		xft:monospace:size=11:autohint=true
 ! *font:		-misc-dejavu sans mono-medium-r-normal--0-90-0-0-m-0-iso10646-1
 ! URxvt.boldFont:         -xos4-terminus-bold-r-normal--14-140-72-72-c-80-iso8859-15
 ! URxvt.italicFont:       xft:DejaVu Sans Mono:italic:autohint=true
