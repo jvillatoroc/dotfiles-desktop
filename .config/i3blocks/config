@@ -35,7 +35,7 @@ markup=none
 # See the script for details.
 [volume]
 #label=VOL
-label=♪
+label=🔊
 instance=Master
 #instance=PCM
 interval=1
@@ -117,6 +117,7 @@ interval=5
 # This displays "ARTIST - SONG" if a music is playing.
 # Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
 #[mediaplayer]
+#label=♪
 #instance=spotify
 #interval=5
 #signal=10
