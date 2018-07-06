@@ -105,16 +105,16 @@ set $workspace6 "6"
 set $workspace7 "7"
 set $workspace8 "8"
 set $workspace9 "9"
-set $workspace10 "10"
+set $workspace10 "10: VM"
 
 assign [class="Firefox"] $workspace2
 assign [class="Chromium"] $workspace2
 assign [class="qutebrowser"] $workspace2
-assign [class="Qemu-system-x86_64" instance="qemu-system-x86_64"] $workspace4
-assign [class="Vmware"] $workspace4
-assign [class="Vmplayer"] $workspace4
-assign [class="VirtualBox"] $workspace4
-assign [class="Virt-manager"] $workspace4
+assign [class="Qemu-system-x86_64" instance="qemu-system-x86_64"] $workspace10
+assign [class="Vmware"] $workspace10
+assign [class="Vmplayer"] $workspace10
+assign [class="VirtualBox"] $workspace10
+assign [class="Virt-manager"] $workspace10
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
