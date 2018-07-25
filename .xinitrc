@@ -45,6 +45,7 @@ dropbox &
 # start nm-applet automatically
 nm-applet &
 
+# start and configure feh background wallpaper automatically
 ./.fehbg
 
 # run window manager
