@@ -29,7 +29,7 @@ font pango:Noto Sans Mono 10
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-set $term st
+set $term urxvt
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
@@ -37,6 +37,9 @@ bindsym $mod+Return exec $term
 
 # launch the ranger File Manager
 bindsym $mod+Shift+f exec $term -e ranger
+
+# launch the mutt email client
+bindsym $mod+Shift+m exec $term -e mutt
 
 # kill focused window
 bindsym $mod+Shift+q kill
