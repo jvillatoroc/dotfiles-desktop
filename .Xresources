@@ -3,7 +3,7 @@ URxvt.secondaryScroll:  true
 
 ! some colours ----
 
-*.background:       #222222
+*.background:       #000000
 ! URxvt.foreground:       gray90
 *.foreground:       #e8e9ca
  
@@ -50,7 +50,7 @@ URxvt.insecure:         true
 
 ! Font settings ----
 
-URxvt.font:		xft:Noto Sans Mono:size=10
+URxvt.font:		xft:Noto Sans Mono:size=9
 ! URxvt.font:		xft:monospace:size=11:autohint=true
 ! *font:		-misc-dejavu sans mono-medium-r-normal--0-90-0-0-m-0-iso10646-1
 ! URxvt.boldFont:         -xos4-terminus-bold-r-normal--14-140-72-72-c-80-iso8859-15
