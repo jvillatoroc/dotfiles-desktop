@@ -85,8 +85,6 @@ export EDITOR='vim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-neofetch
-
 alias infowars="mpv http://infowarslive-lh.akamaihd.net/i/infowarslivestream_1@353459/master.m3u8"
 alias eZ="vim ~/dotfiles/.zshrc"
 alias jblive="mpv rtsp://jblive.videocdn.scaleengine.net/jb-live/play/jblive.stream"
