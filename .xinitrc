@@ -51,12 +51,12 @@ nm-applet &
 # run window manager
 # exec mate-session
 # exec awesome
-# exec i3
+exec i3
 # exec startlxqt
 # exec startkde
 
-while xsetroot -name "`free -h | grep Mem: | awk '{ print $4; }'` `date` `uptime | sed 's/.*,//'`"
-do
-	sleep 1
-done &
-exec dwm
+# while xsetroot -name "`acpi` `free -h | grep Mem: | awk '{ print $4; }'` `date` `uptime | sed 's/.*,//'`"
+# do
+# 	sleep 1
+# done &
+# exec dwm
