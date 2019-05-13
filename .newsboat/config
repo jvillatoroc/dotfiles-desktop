@@ -10,6 +10,8 @@ bind-key J next-feed articlelist
 bind-key K prev-feed articlelist
 bind-key U show-urls
 
+player "mpv"
+
 browser linkhandler
 macro , open-in-browser
 macro v set browser "i3 exec mpv"; open-in-browser ; set browser linkhandler
