@@ -48,6 +48,9 @@ nm-applet &
 # start and configure feh background wallpaper automatically
 ./.fehbg
 
+#start compton automatically
+compton -b &
+
 # run window manager
 # exec mate-session
 # exec awesome
