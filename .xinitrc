@@ -54,7 +54,7 @@ compton -b &
 # run window manager
 # exec i3
 
-while xsetroot -name "`acpi` `free -h | grep Mem: | awk '{ print $4; }'` `date` `uptime | sed 's/.*,//'`"
+while xsetroot -name "`acpi` `free -h | grep Mem: | awk '{ print $4; }'` `date +"%a %Y-%m-%d %R"` `uptime | sed 's/.*,//'`"
 do
 	sleep 1
 done &
