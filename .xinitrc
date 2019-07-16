@@ -55,7 +55,7 @@ compton -b &
 # exec i3
 
 while xsetroot -name "` acpi | awk '{ print ($3 == "Discharging,") ? "🔋 " $4 $5 : "🔌 " $4 }' | sed 's/,/\ /g' ` \
-	` free -h | grep Mem: | awk '{ print $4; }' ` \
+	` free -h | grep Mem: | awk '{ print $7; }' ` \
 	` date +"%a %Y-%m-%d %R"` `uptime | sed 's/.*,//' `"
 do
 	sleep 1
