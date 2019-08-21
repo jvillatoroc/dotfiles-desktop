@@ -1,7 +1,7 @@
 appearance.calendarview=monthly
 appearance.compactpanels=no
 appearance.defaultpanel=calendar
-appearance.layout=3
+appearance.layout=7
 appearance.notifybar=yes
 appearance.sidebarwidth=2
 appearance.theme=red on default
@@ -25,3 +25,8 @@ notification.command=printf '\a'
 notification.notifyall=flagged-only
 notification.warning=300
 general.systemevents=yes
+appearance.headerline=yes
+appearance.eventseparator=yes
+appearance.dayseparator=yes
+appearance.emptyline=yes
+general.multipledays=yes
