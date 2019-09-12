@@ -48,6 +48,9 @@ nm-applet &
 # start and configure feh background wallpaper automatically
 ./.fehbg
 
+# Bind keys
+sxhkd &
+
 #start compton automatically
 compton -b &
 
