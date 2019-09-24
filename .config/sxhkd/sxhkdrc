@@ -1,0 +1,20 @@
+# basic binds
+
+#super + Return
+#	$TERMINAL
+
+#super + d
+#	dmenu_run
+
+XF86AudioMute
+	amixer sset Master toggle
+
+XF86AudioLowerVolume
+	amixer sset Master 2%-
+
+XF86AudioRaiseVolume
+	amixer sset Master 2%+
+
+XF86AudioMicMute
+	amixer sset Capture toggle
+
