@@ -18,3 +18,14 @@ XF86AudioRaiseVolume
 XF86AudioMicMute
 	amixer sset Capture toggle
 
+super + ctrl + m
+	amixer sset Master toggle
+
+super + ctrl + Down
+	amixer sset Master 2%-
+
+super + ctrl + Up
+	amixer sset Master 2%+
+
+super + ctrl + M
+	amixer sset Capture toggle
