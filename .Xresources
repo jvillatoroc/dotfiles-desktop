@@ -50,8 +50,8 @@ URxvt.insecure:         true
 
 ! Font settings ----
 
-URxvt.font:		xft:Noto Sans Mono:size=9
-! URxvt.font:		xft:monospace:size=11:autohint=true
+! URxvt.font:		xft:Noto Sans Mono:size=9
+URxvt.font:		xft:monospace:size=11:autohint=true
 ! *font:		-misc-dejavu sans mono-medium-r-normal--0-90-0-0-m-0-iso10646-1
 ! URxvt.boldFont:         -xos4-terminus-bold-r-normal--14-140-72-72-c-80-iso8859-15
 ! URxvt.italicFont:       xft:DejaVu Sans Mono:italic:autohint=true
