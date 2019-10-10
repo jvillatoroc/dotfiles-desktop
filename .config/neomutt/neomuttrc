@@ -1,0 +1,37 @@
+set editor=vim
+
+## General options
+set header_cache = "~/.cache/mutt"
+set imap_check_subscribed
+set imap_keepalive = 150
+unset imap_passive
+set mail_check = 60
+set mbox_type=Maildir
+set mailcap_path = ~/.config/neomutt/mailcap
+auto_view text/html
+alternative_order text/plain text/html
+set sleep_time = 0
+
+# Sorting
+set sort=threads
+set sort_aux=last-date-received
+
+## ACCOUNT1
+source "~/.config/neomutt/Galileo"
+# Here we use the $folder variable that has just been set in the sourced file.
+# We must set it right now otherwise the 'folder' variable will change in the next sourced file.
+folder-hook $folder 'source ~/.config/neomutt/Galileo'
+
+## ACCOUNT2
+source "~/.config/neomutt/personal"
+folder-hook $folder 'source ~/.config/neomutt/personal'
+##folder-hook *user@gmail.com/Family ##'set realname="Bob"'
+
+## Shortcuts
+### Change between inboxes
+macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.config/neomutt/personal<enter><change-folder>!<enter>'
+macro index,pager <f3> '<sync-mailbox><enter-command>source ~/.config/neomutt/Galileo<enter><change-folder>!<enter>'
+
+### open URLs with urlscan
+macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
