@@ -66,4 +66,7 @@ while xsetroot -name "` acpi | awk '{ print ($3 == "Discharging,") ? "🔋 " $4 
 do
 	sleep 1
 done &
+
+# Start dwm
 exec dwm
+
