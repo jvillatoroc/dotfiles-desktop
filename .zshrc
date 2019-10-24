@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH:/opt:$HOME/.local/bin
+export PATH=$HOME/bin:/usr/local/bin:$PATH:/opt:$HOME/.local/bin:/home/jonathan/.vim/bundle/vim-live-latex-preview/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/jonathan/.oh-my-zsh
