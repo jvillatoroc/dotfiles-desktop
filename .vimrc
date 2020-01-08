@@ -14,3 +14,6 @@ au BufRead /tmp/mutt-* set tw=72
 " Recompile suckless programs automatically:
 	autocmd BufWritePost config.h,config.def.h !make && make clean && sudo make install
 
+" Recompile LaTeX documents automatically:
+	autocmd BufWritePost *.tex !pdflatex %
+
