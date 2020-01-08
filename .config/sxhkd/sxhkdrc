@@ -29,3 +29,11 @@ super + ctrl + Up
 
 super + ctrl + M
 	amixer sset Capture toggle
+
+# launch neomutt
+super + shift + m
+	st -e neomutt
+
+# launch file manager
+super + shift + f
+	st -e nnn
