@@ -3,9 +3,10 @@ set editor=vim
 ## General options
 set header_cache = "~/.cache/mutt"
 set imap_check_subscribed
-set imap_keepalive = 150
+set imap_keepalive = 300
 unset imap_passive
-set mail_check = 60
+set mail_check = 90
+set timeout = 15
 set mbox_type=Maildir
 set mailcap_path = ~/.config/neomutt/mailcap
 auto_view text/html
