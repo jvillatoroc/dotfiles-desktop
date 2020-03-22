@@ -1,15 +1,24 @@
-;=====================================================
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
 ;
 ;   To learn more about how to configure Polybar
-;   go to https://github.com/jaagr/polybar
+;   go to https://github.com/polybar/polybar
 ;
-;   The README contains alot of information
+;   The README contains a lot of information
 ;
-;=====================================================
+;==========================================================
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #33020202
+background = #222
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
@@ -17,6 +26,83 @@ foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
+;black = ${xrdb:color0:#1d2021}
+;darkred = ${xrdb:color1:#cc241d}
+;darkgreen = ${xrdb:color2:#98971a}
+;darkyellow = ${xrdb:color3:#d79921}
+;darkblue = ${xrdb:color4:#458588}
+;darkmagenta = ${xrdb:color5:#b16286}
+;darkcyan = ${xrdb:color6:#689d6a}
+;lightgray = ${xrdb:color7:#a89984}
+;gray = ${xrdb:color8:#928374}
+;red = ${xrdb:color9:#fb4934}
+;green = ${xrdb:color10:#b8bb26}
+;yellow = ${xrdb:color11:#fabd2f}
+;blue = ${xrdb:color12:#83a598}
+;magenta = ${xrdb:color13:#d3869b}
+;cyan = ${xrdb:color14:#8ec07c}
+;white = ${xrdb:color15:#ebdbb2}
+;background = ${xrdb:color256:#1d2021}
+;foreground = ${xrdb:color257:#ebdbb2}
+
+;- begin mybar --------------------------------------------
+
+[bar/mybar]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 27
+;offset-x = 1%
+;offset-y = 1%
+radius = 6.0
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 4
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+;font-0 = monospace:pixelsize=10;1
+;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+;font-2 = siji:pixelsize=10;1
+font-0 = mono:pixelsize=10;1
+font-1 = Inconsolata Nerd Font:size=8;1
+font-2 = Noto Color Emoji:scale=10:style=Regular;2
+font-3 = Symbola:pixelsize=9;1
+
+modules-left = bspwm
+modules-center = mpd
+modules-right = filesystem xbacklight pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
+
+tray-position = right
+tray-padding = 2
+;tray-background = #0063ff
+
+;wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+;- end mybar ----------------------------------------------
+
+;- begin example bar --------------------------------------
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -42,17 +128,20 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+;font-0 = monospace:pixelsize=10;1
+;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+;font-2 = siji:pixelsize=10;1
+font-0 = mono:pixelsize=9;1
+font-1 = Inconsolata Nerd Font:size=8;1
+font-2 = Noto Color Emoji:scale=10:style=Regular;2
+font-3 = Symbola:pixelsize=9;1
 
-modules-left = bspwm i3
+modules-left = bspwm
 modules-center = mpd
 modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
 
 tray-position = right
 tray-padding = 2
-;tray-transparent = true
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
@@ -69,190 +158,7 @@ tray-padding = 2
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-[bar/mybar]
-; Use the following command to list available outputs:
-; If unspecified, the application will pick the first one it finds.
-; $ xrandr -q | grep " connected" | cut -d ' ' -f1
-monitor =
-
-; Use the specified monitor as a fallback if the main one is not found.
-monitor-fallback =
-
-; Require the monitor to be in connected state
-; XRandR sometimes report my monitor as being disconnected (when in use)
-monitor-strict = false
-
-; Tell the Window Manager not to configure the window.
-; Use this to detach the bar if your WM is locking its size/position.
-override-redirect = false
-
-; Put the bar at the bottom of the screen
-bottom = false
-
-; Prefer fixed center position for the `modules-center` block
-; When false, the center position will be based on the size of the other blocks.
-fixed-center = true
-
-; Dimension defined as pixel value (e.g. 35) or percentage (e.g. 50%),
-; the percentage can optionally be extended with a pixel offset like so:
-; 50%:-10, this will result in a width or height of 50% minus 10 pixels
-width = 100%
-height = 27
-
-; Offset defined as pixel value (e.g. 35) or percentage (e.g. 50%)
-; the percentage can optionally be extended with a pixel offset like so:
-; 50%:-10, this will result in an offset in the x or y direction 
-; of 50% minus 10 pixels
-offset-x = 0
-offset-y = 0
-
-; Background argb color (e.g. #f00, #ff992a, #ddff1023)
-background = ${colors.background}
-
-; Foreground argb color (e.g. #f00, #ff992a, #ddff1023)
-foreground = ${colors.foreground}
-
-; Background gradient (vertical steps)
-;   background-[0-9]+ = #aarrggbb
-;background-0 = 
-
-; Value used for drawing rounded corners
-; Individual top/bottom values can be defined using:
-;   radius-{top,bottom}
-radius = 6.0
-
-; Under-/overline pixel size and argb color
-; Individual values can be defined using:
-;   {overline,underline}-size
-;   {overline,underline}-color
-line-size = 1
-line-color = #f00
-
-; Values applied to all borders
-; Individual side values can be defined using:
-;   border-{left,top,right,bottom}-size
-;   border-{left,top,right,bottom}-color
-border-size =
-border-color =
-
-; Number of spaces to add at the beginning/end of the bar
-; Individual side values can be defined using:
-;   padding-{left,right}
-padding = 2
-
-; Number of spaces to add before/after each module
-; Individual side values can be defined using:
-;   module-margin-{left,right}
-module-margin = 1
-
-; Fonts are defined using <font-name>;<vertical-offset>
-; Font names are specified using a fontconfig pattern.
-;   font-0 = NotoSans-Regular:size=8;2
-;   font-1 = MaterialIcons:size=10
-;   font-2 = Termsynu:size=8;-1
-;   font-3 = FontAwesome:size=10
-; See the Fonts wiki page for more details
-font-0 = fixed:pixelsize=10;1
-
-; Modules are added to one of the available blocks
-;   modules-left = cpu ram
-;   modules-center = xwindow xbacklight
-;   modules-right = ipc clock
-modules-left = i3
-modules-center = mpd
-modules-right = filesystem xbacklight pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
-
-; The separator will be inserted between the output of each module
-separator =
-
-; This value is used to add extra spacing between elements
-; @deprecated: This parameter will be removed in an upcoming version
-spacing = 0
-
-; Opacity value between 0.0 and 1.0 used on fade in/out
-dim-value = 1.0
-
-; Value to be used to set the WM_NAME atom
-; If the value is empty or undefined, the atom value
-; will be created from the following template: polybar-[BAR]_[MONITOR]
-; NOTE: The placeholders are not available for custom values
-wm-name =
-
-; Locale used to localize various module data (e.g. date)
-; Expects a valid libc locale, for example: sv_SE.UTF-8
-locale = en_US.UTF-8
-
-; Position of the system tray window
-; If empty or undefined, tray support will be disabled
-; NOTE: A center aligned tray will cover center aligned modules
-;
-; Available positions:
-;   left
-;   center
-;   right
-tray-position =
-
-; If true, the bar will not shift its
-; contents when the tray changes
-tray-detached = false
-
-; Tray icon max size
-tray-maxsize = 16
-
-; Enable pseudo transparency
-; Will automatically be enabled if a fully transparent
-; background color is defined using `tray-background`
-tray-transparent = false
-
-; Background color for the tray container
-; By default the tray container will use the bar
-; background color.
-; Note: 32 bit alpha blending is not supported.
-tray-background = ${root.background}
-
-; Tray offset defined as pixel value (e.g. 35) or percentage (e.g. 50%)
-tray-offset-x = 0
-tray-offset-y = 0
-
-; Pad the sides of each tray icon
-tray-padding = 0
-
-; Scale factor for tray clients
-tray-scale = 1.0
-
-; Restack the bar window and put it above the
-; selected window manager's root
-;
-; Fixes the issue where the bar is being drawn
-; on top of fullscreen window's
-;
-; Currently supported WM's:
-;   bspwm
-;   i3 (requires: `override-redirect = true`)
-wm-restack =
-
-; Enable support for inter-process messaging
-; See the Messaging wiki page for more details.
-enable-ipc = false
-
-; Fallback click handlers that will be called if
-; there's no matching module handler found.
-click-left = 
-click-middle = 
-click-right =
-scroll-up =
-scroll-down =
-double-click-left =
-double-click-middle =
-double-click-right =
-
-; Requires polybar to be built with xcursor support (xcb-util-cursor)
-; Possible values are:
-; - default   : The default pointer as before, can also be an empty string (default)
-; - pointer   : Typically in the form of a hand
-; - ns-resize : Up and down arrows, can be used to indicate scrolling
-cursor-click = 
-cursor-scroll = 
+;- end example bar ----------------------------------------
 
 [module/xwindow]
 type = internal/xwindow
@@ -290,18 +196,18 @@ type = internal/bspwm
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
-label-focused-padding = 2
+label-focused-padding = 1
 
 label-occupied = %index%
-label-occupied-padding = 2
+label-occupied-padding = 1
 
 label-urgent = %index%!
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 1
 
 label-empty = %index%
 label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+label-empty-padding = 1
 
 ; Separator in between workspaces
 ; label-separator = |
@@ -321,13 +227,13 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${module/bspwm.label-focused-background}
-label-focused-underline = ${module/bspwm.label-focused-underline}
-label-focused-padding = ${module/bspwm.label-focused-padding}
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
@@ -337,8 +243,8 @@ label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
-label-urgent-background = ${module/bspwm.label-urgent-background}
-label-urgent-padding = ${module/bspwm.label-urgent-padding}
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
 
 ; Separator in between workspaces
 ; label-separator = |
@@ -397,7 +303,7 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp3s0
+interface = net1
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -419,7 +325,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = enp0s25
+interface = enp4s0
 interval = 3.0
 
 format-connected-underline = #55aa55
@@ -507,7 +413,7 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 [module/battery]
 type = internal/battery
 battery = BAT0
-adapter = AC
+adapter = ADP1
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
@@ -591,6 +497,7 @@ screenchange-reload = true
 ;compositing-background = screen
 ;compositing-foreground = source
 ;compositing-border = over
+;pseudo-transparency = false
 
 [global/wm]
 margin-top = 5

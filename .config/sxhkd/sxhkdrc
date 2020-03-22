@@ -152,4 +152,4 @@ super + shift + m
 
 # launch file manager
 super + shift + f
-	st -e nnn
+	st -e ranger
