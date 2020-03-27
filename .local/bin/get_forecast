@@ -1,1 +1,7 @@
-curl wttr.in?format=3 > ~/.cache/weather_report
+#!/bin/bash
+
+[ "$(stat -c %y ~/.cache/weather_report 2>/dev/null | cut -d '.' -f1 | cut -d ':' -f1 )" != "$(date '+%Y-%m-%d %H')" ] && \
+	curl -s http://wttr.in/?format=3 > ~/.cache/weather_report
+
+grep "Guatemala" ~/.cache/weather_report |
+	awk -F' ' '{print $4 " " $5 }'
