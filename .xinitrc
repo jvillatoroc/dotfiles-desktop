@@ -49,7 +49,7 @@ nm-applet &
 ./.fehbg
 
 # Bind keys
-#sxhkd &
+sxhkd &
 
 #start compton automatically
 compton -b &
