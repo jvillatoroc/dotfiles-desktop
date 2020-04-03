@@ -60,7 +60,8 @@ compton -b &
 # setting required for Android Studio to run on dwm
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-while xsetroot -name "` get_forecast | acpi | awk '{ print ($3 == "Discharging,") ? "🔋 " $4 $5 : "🔌 " $4 }' | sed 's/,/\ /g' ` \
+while xsetroot -name "` get_forecast ` \
+	` get_power_supply ` \
        ` free -h | grep Mem: | awk '{ print $7; }' ` \
        ` date +"%a %Y-%m-%d %R"` `uptime | sed 's/.*,//' `"
 do
