@@ -1,0 +1,27 @@
+#!/bin/bash
+# NOTICE: This file is an exact copy of Luke Smith's screencasting script, as
+# shown in https://www.youtube.com/watch?v=386Z2yeQ5fo
+#
+# I copied it since, well... it works, and also because I wanted  to learn so 
+# I'm testing it myself.
+
+if [[ -f ~/output.mkv ]]
+then
+	n=1
+	while [[ -f ~/output_$n.mkv ]]
+	do
+		n=$((n+1))
+	done
+	filename="$HOME/output_$n.mkv"
+else
+	filename="$HOME/output.mkv"
+fi
+
+# The actual ffmpeg command:
+
+ffmpeg \
+	-f x11grab \
+	-s $(xdpyinfo | grep dimensions | awk '{print $2;}') \
+	-i :0.0 \
+	-f alsa -i default \
+	-c libx264 -r 30 -c:a flac $filename
