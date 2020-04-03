@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [[ -f /sys/class/power_supply/BAT0 ]]
+then
+	acpi | awk '{ print ($3 == "Discharging,") ? "🔋 " $4 $5 : "🔌 " $4 }' | sed 's/,/\ /g'
+else
+	printf "Plugged In"
+fi
