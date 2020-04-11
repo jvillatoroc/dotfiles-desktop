@@ -1,5 +1,5 @@
-URxvt.scrollstyle:      plain
-URxvt.secondaryScroll:  true
+*.scrollstyle:      plain
+*.secondaryScroll:  true
 
 ! some colours ----
 
@@ -88,26 +88,26 @@ URxvt.secondaryScroll:  true
 ! geometry etc settings ---
 
 ! URxvt.geometry:         154x36
-URxvt.loginShell:       false
-URxvt.meta:             ignore
-URxvt.utmpInhibit:      true
+*.loginShell:       false
+*.meta:             ignore
+*.utmpInhibit:      true
 
 ! Large scrollback buffer ----
 
-URxvt.saveLines:        8192
+*.saveLines:        8192
 
 ! Use visual bell, STOP THE INSANITY! ----
 
-URxvt.visualBell:       true
+*.visualBell:       true
 
 ! don t hack me, brah... ----
 
-URxvt.insecure:         true
+*.insecure:         true
 
 ! Font settings ----
 
 ! URxvt.font:		xft:Noto Sans Mono:size=9
-URxvt.font:		xft:monospace:size=11:autohint=true
+*.font:		xft:DejaVu Sans Mono:size=11:autohint=true
 ! *font:		-misc-dejavu sans mono-medium-r-normal--0-90-0-0-m-0-iso10646-1
 ! URxvt.boldFont:         -xos4-terminus-bold-r-normal--14-140-72-72-c-80-iso8859-15
 ! URxvt.italicFont:       xft:DejaVu Sans Mono:italic:autohint=true
