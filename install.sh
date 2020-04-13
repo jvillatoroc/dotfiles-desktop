@@ -29,6 +29,7 @@ case "$PKG_MGR" in
 	pacman)
 		pkg_install xorg-server xorg-apps
 		pkg_install xorg-video-intel nvidia
+		pkg_install ttf-dejavu ttf-liberation ttf-inconsolata
 		;;
 	apt)
 		pkg_install xorg
