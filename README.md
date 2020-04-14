@@ -1,6 +1,8 @@
 # my dotfiles
 
-# Dependencies
+# Debian users
 
-For debian users, ** sudo ** *must* be installed.
+`gpasswd -a <user> root` to add your user to the `root` group.
+
+`sudo` **must** be installed.
 
