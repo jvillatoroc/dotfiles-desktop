@@ -11,6 +11,8 @@ my dotfiles
 
 After making sure `curl` is installed, run:
 
+```
 curl -LO https://raw.githubusercontent.com/jvillatoroc/dotfiles-laptop/master/install.sh
 sh install.sh
+```
 
