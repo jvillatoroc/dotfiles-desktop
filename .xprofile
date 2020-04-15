@@ -1,0 +1,20 @@
+# start Xflux automatically
+xflux -l 14.626060 -g -90.563772 &
+
+# start Dropbox client automatically
+dropbox &
+
+# start nm-applet automatically
+nm-applet &
+
+# start and configure feh background wallpaper automatically
+./.fehbg
+
+# Bind keys
+sxhkd &
+
+#start compton automatically
+compton -b &
+
+statusbar &
+
