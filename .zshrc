@@ -91,3 +91,5 @@ alias jblive="mpv rtsp://jblive.videocdn.scaleengine.net/jb-live/play/jblive.str
 
 # fix for: vmware 12 process terminates immediately after start, no GUI is launched
 export VMWARE_USE_SHIPPED_LIBS="yes"
+
+export TERM=st
