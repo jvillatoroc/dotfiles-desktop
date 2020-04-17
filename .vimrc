@@ -17,3 +17,5 @@ au BufRead /tmp/mutt-* set tw=72
 " Recompile LaTeX documents automatically:
 	autocmd BufWritePost *.tex !pdflatex %
 
+" Reload .Xresources automatically:
+	autocmd BufWritePost .Xresources !xrdb .Xresources
