@@ -27,47 +27,17 @@ if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
 
-# start some nice programs
-
-if [ -d /etc/X11/xinit/xinitrc.d ] ; then
- for f in /etc/X11/xinit/xinitrc.d/?* ; do
-  [ -x "$f" ] && . "$f"
- done
- unset f
-fi
-
-# start Xflux automatically
-xflux -l 14.626060 -g -90.563772 &
-
-# start Dropbox client automatically
-dropbox &
-
-# start nm-applet automatically
-nm-applet &
-
-# start and configure feh background wallpaper automatically
-./.fehbg
-
-# Bind keys
-sxhkd &
-
-#start compton automatically
-compton -b &
-
-# run window manager
-# exec i3
-
 # setting required for Android Studio to run on dwm
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-while xsetroot -name "` get_forecast ` \
-	` get_power_supply ` \
-       ` free -h | grep Mem: | awk '{ print $7; }' ` \
-       ` date +"%a %Y-%m-%d %R"` `uptime | sed 's/.*,//' `"
-do
-       sleep 1
-done &
+# source the processes that need to be run when starting the graphical
+# environment
+[ -f ~/.xprofile ] && . ~/.xprofile
 
-# Start dwm
+# Statusbar loop
+while true; do
+	xsetroot -name "$( date +"%F %R" ) `get_forecast` `get_power_supply` "
+	sleep 1m	# Update time every minute
+done &
 exec dwm
 
