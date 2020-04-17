@@ -386,5 +386,5 @@ settings = {
     nick = "lachokds";
   };
   "fe-text" = { actlist_sort = "refnum"; };
-  "irc/dcc" = { dcc_download_path = "~/External/anime"b};
+  "irc/dcc" = { dcc_download_path = "~/Videos/anime"b};
 };
