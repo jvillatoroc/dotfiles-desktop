@@ -1,5 +1,5 @@
 #!/bin/bash
-OS=$(grep "ID" /etc/os-release | head -1 | cut -d '=' -f 2)
+OS=$(grep "^ID" /etc/os-release | cut -d '=' -f 2)
 
 case "$OS" in
 	arch) PKG_MGR="pacman" ;;
