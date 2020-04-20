@@ -25,7 +25,7 @@ pkg_install vim curl git zsh
 case "$PKG_MGR" in
 	pacman)
 		pkg_install xorg-server xorg-apps
-		pkg_install xorg-video-intel nvidia xorg-xinit
+		pkg_install xf86-video-intel mesa nvidia xorg-xinit
 		pkg_install ttf-dejavu ttf-liberation ttf-inconsolata
 		;;
 	apt)
