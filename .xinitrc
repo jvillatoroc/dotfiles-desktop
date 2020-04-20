@@ -30,14 +30,27 @@ fi
 # setting required for Android Studio to run on dwm
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-# source the processes that need to be run when starting the graphical
-# environment
-[ -f ~/.xprofile ] && . ~/.xprofile
+# start Xflux automatically
+xflux -l 14.626060 -g -90.563772 &
+
+# start Dropbox client automatically
+dropbox &
+
+# start nm-applet automatically
+nm-applet &
+
+# start and configure feh background wallpaper automatically
+./.fehbg
+
+#start compton automatically
+compton -b &
+
+# Bind keys
+sxhkd &
 
 # Statusbar loop
 while true; do
-	xsetroot -name "$( date +"%F %R" ) `get_forecast` `get_power_supply` "
-	sleep 1m	# Update time every minute
+	xsetroot -name "$(date +'%F (%a) %R')"
+	sleep 1m
 done &
 exec dwm
-
