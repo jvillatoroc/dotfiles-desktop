@@ -31,6 +31,7 @@ case "$PKG_MGR" in
 	apt)
 		pkg_install xorg xinit
 		pkg_install nvidia-detect nvidia-legacy-390xx-driver
+		pkg_install build-essential
 		;;
 esac
 
