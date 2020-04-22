@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill '/home/jonathan/Repos/dotfiles-laptop/wall.png' 
+feh --no-fehbg --bg-fill '~/Repos/dotfiles-laptop/wall.png' 
