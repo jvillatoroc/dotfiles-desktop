@@ -13,7 +13,7 @@ case "$PKG_MGR" in
 		pkg_upgrade() { sudo $PKG_MGR -Syyu ;}
 		;;
 	apt)
-		pkg_install() { sudo $PKG_MGR install $1 ;}
+		pkg_install() { sudo $PKG_MGR install -y $* ;}
 		pkg_upgrade() { sudo $PKG_MGR update && sudo $PKG_MGR upgrade ;}
 		;;
 esac
