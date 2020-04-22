@@ -38,7 +38,8 @@ pkg_install gnupg feh
 
 # Setup Repos directory
 REPDIR=~/Repos
-mkdir $REPDIR && cd $REPDIR
+mkdir $REPDIR
+cd $REPDIR
 
 # Clone my dotfiles
 git clone https://github.com/jvillatoroc/dotfiles-laptop.git
@@ -79,5 +80,3 @@ ln -s $REPDIR/dotfiles-laptop/.Xresources
 ln -s $REPDIR/dotfiles-laptop/.xprofile
 ln -s $REPDIR/dotfiles-laptop/.zprofile
 ln -s $REPDIR/dotfiles-laptop/.zshrc
-
-

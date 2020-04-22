@@ -3,7 +3,7 @@ my dotfiles
 
 # Debian users
 
-`gpasswd -a <user> root` to add your user to the `root` group.
+`gpasswd -a <user> sudo` to add your user to the `sudo` group.
 
 `sudo` **must** be installed.
 
