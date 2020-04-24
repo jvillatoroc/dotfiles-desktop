@@ -22,6 +22,9 @@ pkg_upgrade
 
 pkg_install vim curl git zsh
 
+# change shell to zsh
+chsh -s /bin/zsh
+
 case "$PKG_MGR" in
 	pacman)
 		pkg_install xorg-server xorg-apps
