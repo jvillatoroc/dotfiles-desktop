@@ -29,13 +29,13 @@ case "$PKG_MGR" in
 	pacman)
 		pkg_install xorg-server xorg-apps
 		pkg_install xf86-video-intel mesa nvidia xorg-xinit
-		pkg_install ttf-inconsolata noto-fonts noto-fonts-cjk noto-fonts-emoji
+		pkg_install ttf-linux-libertine ttf-inconsolata noto-fonts noto-fonts-cjk noto-fonts-emoji
 		pkg_install base-devel gcc make
 		;;
 	apt)
 		pkg_install xorg xinit
 		pkg_install nvidia-detect nvidia-legacy-390xx-driver
-		pkg_install fonts-inconsolata fonts-noto fonts-noto-cjk fonts-noto-colo-emoji
+		pkg_install fonts-linuxlibertine fonts-inconsolata fonts-noto fonts-noto-cjk fonts-noto-colo-emoji
 		pkg_install build-essential suckless-tools dwm
 		;;
 esac
