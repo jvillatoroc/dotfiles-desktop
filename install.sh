@@ -9,7 +9,7 @@ esac
 
 case "$PKG_MGR" in
 	pacman)
-		pkg_install() { sudo $PKG_MGR -S $1 ;}
+		pkg_install() { sudo $PKG_MGR -S $* --noconfirm ;}
 		pkg_upgrade() { sudo $PKG_MGR -Syyu ;}
 		;;
 	apt)
@@ -48,6 +48,7 @@ cd $REPDIR
 git clone https://github.com/jvillatoroc/dotfiles-laptop.git
 cd dotfiles-laptop
 echo "dotfiles cloned successfully"
+cd ..
 
 # Install my dwm build
 git clone https://github.com/jvillatoroc/dwm.git
