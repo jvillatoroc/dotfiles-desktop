@@ -30,6 +30,7 @@ case "$PKG_MGR" in
 		pkg_install xorg-server xorg-apps
 		pkg_install xf86-video-intel mesa nvidia xorg-xinit
 		pkg_install ttf-dejavu ttf-liberation ttf-inconsolata
+		pkg_install gcc make
 		;;
 	apt)
 		pkg_install xorg xinit
