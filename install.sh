@@ -31,7 +31,7 @@ case "$PKG_MGR" in
 	apt)
 		pkg_install xorg xinit
 		pkg_install nvidia-detect nvidia-legacy-390xx-driver
-		pkg_install build-essential
+		pkg_install build-essential suckless-tools dwm
 		;;
 esac
 
@@ -50,16 +50,28 @@ cd dotfiles-laptop
 echo "dotfiles cloned successfully"
 cd ..
 
+# Install dmenu
+git clone https://git.suckless.org/dmenu
+cd dmenu
+ln -s config.def.h config.h
+make clean && make && sudo make install
+echo "dmenu installed successfully"
+cd ..
+
 # Install my dwm build
 git clone https://github.com/jvillatoroc/dwm.git
 cd dwm
+ln -s config.def.h config.h
 make clean && make && sudo make install
+echo "dwm installed successfully"
 cd ..
 
 # Install my st build
 git clone https://github.com/jvillatoroc/st.git
 cd st
+ln -s config.def.h config.h
 make clean && make && sudo make install
+echo "st installed successfully"
 cd ..
 
 # Install required programs
