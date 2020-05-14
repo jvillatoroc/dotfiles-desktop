@@ -1,16 +1,12 @@
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/local/bin:$PATH:/opt:$HOME/.local/bin:/home/jonathan/.vim/bundle/vim-live-latex-preview/bin
+
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH:/opt:$HOME/.local/bin:/home/jonathan/.vim/bundle/vim-live-latex-preview/bin
-
-export EDITOR='vim'
-
 # fix for: vmware 12 process terminates immediately after start, no GUI is launched
 export VMWARE_USE_SHIPPED_LIBS="yes"
-
-export TERM=st
 
 alias infowars="mpv http://infowarslive-lh.akamaihd.net/i/infowarslivestream_1@353459/master.m3u8"
 alias eZ="vim ~/dotfiles/.zshrc"
