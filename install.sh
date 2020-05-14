@@ -82,9 +82,10 @@ cd ..
 # Install required programs
 pkg_install neomutt irssi mpd ncmpcpp calcurse newsboat
 
-# Create symbolic links
+# Clean up and create symbolic links
 cd ~
-rm -r .bashrc .bash_profile .zshrc .xinitrc .vim
+rm -r .bashrc .bash_profile .calcurse .config .fehbg .irssi .local .ncmpcpp
+rm -r .newsboat .oh-my-zsh .vim .vimrc .xinitrc .Xreources .xprofile .zprofile
 ln -s $REPDIR/dotfiles-laptop/.bash_profile
 ln -s $REPDIR/dotfiles-laptop/.calcurse
 ln -s $REPDIR/dotfiles-laptop/.config
