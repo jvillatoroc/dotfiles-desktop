@@ -1,6 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH:/opt:$HOME/.local/bin:/home/jonathan/.vim/bundle/vim-live-latex-preview/bin
 
+# NNN configs
+export NNN_PLUG='f:finder;o:fzopen;d:diffs;t:nmount;v:imgview'
+
 # Customize the prompt
 PS1="%B%F{red}[%f%F{yellow}%n%f%F{blue}@%m%f%F{magenta}%~%f%F{red}]%f %#%b "
 
@@ -19,9 +22,9 @@ compinit
 # fix for: vmware 12 process terminates immediately after start, no GUI is launched
 export VMWARE_USE_SHIPPED_LIBS="yes"
 
-alias infowars="mpv http://infowarslive-lh.akamaihd.net/i/infowarslivestream_1@353459/master.m3u8"
+alias infowars="streamlink -p mpv http://infowarslive-lh.akamaihd.net/i/infowarslivestream_1@353459/master.m3u8"
 alias eZ="vim $ZDOTDIR/.zshrc"
-alias jblive="mpv rtsp://jblive.videocdn.scaleengine.net/jb-live/play/jblive.stream"
+alias jblive="streamlink -p mpv rtsp://jblive.videocdn.scaleengine.net/jb-live/play/jblive.stream"
 alias g="git"
 alias ga="git add"
 alias gb="git branch"

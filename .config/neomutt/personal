@@ -20,4 +20,3 @@ unset ssl_starttls
 
 ## Hook -- IMPORTANT!
 account-hook $folder "set imap_user=lacho8713@gmail.com imap_pass=$imap_pass"
-

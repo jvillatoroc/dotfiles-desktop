@@ -6,12 +6,17 @@ set imap_check_subscribed
 set imap_keepalive = 300
 unset imap_passive
 set mail_check = 90
-set timeout = 15
+set timeout = 45
 set mbox_type=Maildir
 set mailcap_path = ~/.config/neomutt/mailcap
 auto_view text/html
 alternative_order text/plain text/html
 set sleep_time = 0
+
+# Sidebar
+set sidebar_visible
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set mail_check_stats
 
 # Sorting
 set sort=threads
@@ -26,7 +31,6 @@ source "~/.config/neomutt/personal"
 # Here we use the $folder variable that has just been set in the sourced file.
 # We must set it right now otherwise the 'folder' variable will change in the next sourced file.
 folder-hook $folder 'source ~/.config/neomutt/personal'
-#folder-hook *user@gmail.com/Family ##'set realname="Bob"'
 
 ## Shortcuts
 ### Change between inboxes

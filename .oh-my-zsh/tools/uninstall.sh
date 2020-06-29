@@ -24,8 +24,7 @@ if [ -f ~/.zshrc.pre-oh-my-zsh ] || [ -h ~/.zshrc.pre-oh-my-zsh ]; then
   echo "Your original zsh config was restored. Please restart your session."
 else
   if hash chsh >/dev/null 2>&1; then
-    echo "Switching back to bash"
-    chsh -s /bin/bash
+    echo "NOT Switching back to bash"
   else
     echo "You can edit /etc/passwd to switch your default shell back to bash"
   fi

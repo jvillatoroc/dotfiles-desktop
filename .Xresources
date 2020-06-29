@@ -1,55 +1,53 @@
-st.scrollstyle:      plain
-st.secondaryScroll:  true
+*.scrollstyle:      plain
+*.secondaryScroll:  true
 
-! URxvt.geometry:         154x36
-st.loginShell:       false
-st.meta:             ignore
-st.utmpInhibit:      true
+*.loginShell:       false
+*.meta:             ignore
+*.utmpInhibit:      true
 
 ! Large scrollback buffer ----
-st.saveLines:        8192
+*.saveLines:        8192
 
 ! Use visual bell, STOP THE INSANITY! ----
-st.visualBell:       true
+*.visualBell:       true
 
 ! don t hack me, brah... ----
-st.insecure:         true
+*.insecure:         true
 
 ! some colours ----
 ! special
-st.foreground:   #c0c5ce
-st.background:   #2b303b
-!st.cursorColor:  #c0c5ce
+*.foreground:   #c0c5ce
+*.background:   #2b303b
 
 ! black
-st.color0:       #2b303b
-st.color8:       #65737e
+*.color0:       #2b303b
+*.color8:       #65737e
 
 ! red
-st.color1:       #bf616a
-st.color9:       #bf616a
+*.color1:       #bf616a
+*.color9:       #bf616a
 
 ! green
-st.color2:       #a3be8c
-st.color10:      #a3be8c
+*.color2:       #a3be8c
+*.color10:      #a3be8c
 
 ! yellow
-st.color3:       #ebcb8b
-st.color11:      #ebcb8b
+*.color3:       #ebcb8b
+*.color11:      #ebcb8b
 
 ! blue
-st.color4:       #8fa1b3
-st.color12:      #8fa1b3
+*.color4:       #8fa1b3
+*.color12:      #8fa1b3
 
 ! magenta
-st.color5:       #b48ead
-st.color13:      #b48ead
+*.color5:       #b48ead
+*.color13:      #b48ead
 
 ! cyan
-st.color6:       #96b5b4
-st.color14:      #96b5b4
+*.color6:       #96b5b4
+*.color14:      #96b5b4
 
 ! white
-st.color7:       #c0c5ce
-st.color15:      #eff1f5
+*.color7:       #c0c5ce
+*.color15:      #eff1f5
 
