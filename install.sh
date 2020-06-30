@@ -82,6 +82,21 @@ cd ..
 # Install required programs
 pkg_install neomutt irssi mpd ncmpcpp calcurse newsboat
 
+case "$PKG_MGR" in
+	pacman)
+		# Install AUR helper - yay
+		git clone https://aur.archlinux.org/yay.git
+		cd yay
+		makepkg -si
+		echo "yay AUR helper installed successfully"
+		cd ..
+		
+		# Install Brave browser
+		yay brave-bin
+		echo "Brave browser installed."
+		;;
+esac
+
 # Clean up and create symbolic links
 cd ~
 rm -r .bashrc .bash_profile .calcurse .config .fehbg .irssi .local .ncmpcpp
@@ -102,3 +117,5 @@ ln -s $REPDIR/dotfiles-laptop/.Xresources
 ln -s $REPDIR/dotfiles-laptop/.xprofile
 ln -s $REPDIR/dotfiles-laptop/.zprofile
 ln -s $REPDIR/dotfiles-laptop/.zshrc
+
+echo "Configuration is now finished."
