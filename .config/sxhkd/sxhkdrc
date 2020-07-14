@@ -14,26 +14,26 @@ super + Escape
 XF86AudioMute
 	amixer sset Master toggle
 
+super + ctrl + m
+	amixer sset Master toggle
+
+XF86AudioMicMute
+	amixer sset Capture toggle
+
+super + ctrl + M
+	amixer sset Capture toggle
+
 XF86AudioLowerVolume
+	amixer sset Master 2%-
+
+super + ctrl + Down
 	amixer sset Master 2%-
 
 XF86AudioRaiseVolume
 	amixer sset Master 2%+
 
-XF86AudioMicMute
-	amixer sset Capture toggle
-
-super + ctrl + m
-	amixer sset Master toggle
-
-super + ctrl + Down
-	amixer sset Master 2%-
-
 super + ctrl + Up
 	amixer sset Master 2%+
-
-super + ctrl + M
-	amixer sset Capture toggle
 
 # launch neomutt
 super + shift + m
