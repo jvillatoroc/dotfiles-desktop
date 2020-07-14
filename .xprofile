@@ -30,9 +30,6 @@ fi
 # setting required for Android Studio to run on dwm
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-# start Xflux automatically
-xflux -l 14.626060 -g -90.563772 &
-
 # start Dropbox client automatically
 dropbox &
 
