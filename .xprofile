@@ -46,7 +46,9 @@ compton -b &
 sxhkd &
 
 # Statusbar loop
-while true; do
-        xsetroot -name "$(date +'%F (%a) %R')"
-        sleep 1m
-done &
+#while true; do
+#        xsetroot -name "$(date +'%F (%a) %R')"
+#        sleep 1m
+#done &
+
+dwmblocks &
