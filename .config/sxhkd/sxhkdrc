@@ -39,6 +39,10 @@ super + ctrl + Up
 super + shift + m
 	st -e neomutt
 
+# launch newsboat
+super + shift + n
+	st -e newsboat
+
 # launch file manager
 super + shift + f
 	st -e ranger
