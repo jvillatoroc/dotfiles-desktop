@@ -80,7 +80,9 @@ echo "st installed successfully"
 cd ..
 
 # Install required programs
-pkg_install neomutt irssi mpd ncmpcpp calcurse newsboat
+pkg_install neomutt irssi mpd ncmpcpp calcurse newsboat mpv streamlink
+pkg_install alsamixer pulseaudio pulseaudio-alsa pavucontrol
+systemctl --user status pulseaudio.socket
 
 case "$PKG_MGR" in
 	pacman)
@@ -117,5 +119,8 @@ ln -s $REPDIR/dotfiles-laptop/.Xresources
 ln -s $REPDIR/dotfiles-laptop/.xprofile
 ln -s $REPDIR/dotfiles-laptop/.zprofile
 ln -s $REPDIR/dotfiles-laptop/.zshrc
+
+# set wallpaper
+fehbg --bg-fill wall.png
 
 echo "Configuration is now finished."
