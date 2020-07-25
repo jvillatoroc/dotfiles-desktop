@@ -22,4 +22,5 @@ au BufRead /tmp/mutt-* set tw=72
 	autocmd BufWritePost *.tex !pdflatex %
 
 " Reload .Xresources automatically:
-	autocmd BufWritePost .Xresources !xrdb .Xresources
+	autocmd BufWritePost Xresources !xrdb Xresources
+	autocmd BufWritePost .config/Xresources !xrdb .config/Xresources
