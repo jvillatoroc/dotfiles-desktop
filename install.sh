@@ -83,6 +83,9 @@ cd ..
 pkg_install neomutt irssi mpd ncmpcpp calcurse newsboat mpv streamlink
 pkg_install alsamixer pulseaudio pulseaudio-alsa pavucontrol
 systemctl --user status pulseaudio.socket
+pkg_install docker
+sudo gpasswd -a $(whoami) docker
+pkg_install zaproxy exiftool gimp texlive-most texlive-lang biber
 
 case "$PKG_MGR" in
 	pacman)
@@ -119,6 +122,8 @@ ln -s $REPDIR/dotfiles-laptop/.Xresources
 ln -s $REPDIR/dotfiles-laptop/.xprofile
 ln -s $REPDIR/dotfiles-laptop/.zprofile
 ln -s $REPDIR/dotfiles-laptop/.zshrc
+
+pkg_install go syncthing
 
 # set wallpaper
 fehbg --bg-fill wall.png
