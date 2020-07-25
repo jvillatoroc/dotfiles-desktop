@@ -12,28 +12,28 @@ super + Escape
 
 # multimedia key bindings
 XF86AudioMute
-	amixer sset Master toggle
+	pamixer -t; pkill -RTMIN+10 dwmblocks
 
 super + ctrl + m
-	amixer sset Master toggle
+	pamixer -t; pkill -RTMIN+10 dwmblocks
 
 XF86AudioMicMute
-	amixer sset Capture toggle
+	amixer sset Capture toggle; pkill -RTMIN+10 dwmblocks
 
 super + ctrl + M
-	amixer sset Capture toggle
+	amixer sset Capture toggle; pkill -RTMIN+10 dwmblocks
 
 XF86AudioLowerVolume
-	amixer sset Master 2%-
+	pamixer --allow-boost -d 2; pkill -RTMIN+10 dwmblocks
 
 super + ctrl + Down
-	amixer sset Master 2%-
+	pamixer --allow-boost -d 2; pkill -RTMIN+10 dwmblocks
 
 XF86AudioRaiseVolume
-	amixer sset Master 2%+
+	pamixer --allow-boost -i 2; pkill -RTMIN+10 dwmblocks
 
 super + ctrl + Up
-	amixer sset Master 2%+
+	pamixer --allow-boost -i 2; pkill -RTMIN+10 dwmblocks
 
 # launch neomutt
 super + shift + m
