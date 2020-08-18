@@ -27,10 +27,23 @@ chsh -s /bin/zsh
 
 case "$PKG_MGR" in
 	pacman)
+		# Install AUR helper - yay
+		git clone https://aur.archlinux.org/yay.git
+		cd yay
+		makepkg -si
+		echo "yay AUR helper installed successfully"
+		cd ..
+		;;
+esac
+
+# Install graphics drivers
+case "$PKG_MGR" in
+	pacman)
 		pkg_install xorg-server xorg-apps
 		pkg_install xf86-video-intel mesa nvidia xorg-xinit
 		pkg_install ttf-linux-libertine ttf-inconsolata noto-fonts noto-fonts-cjk noto-fonts-emoji
 		pkg_install base-devel gcc make
+		yay nvidia-390xx-dkms
 		;;
 	apt)
 		pkg_install xorg xinit
@@ -71,6 +84,8 @@ make clean && make && sudo make install
 echo "dwm installed successfully"
 cd ..
 
+pkg_install compton
+
 # Install my st build
 git clone https://github.com/jvillatoroc/st.git
 cd st
@@ -85,22 +100,14 @@ pkg_install alsamixer pulseaudio pulseaudio-alsa pavucontrol
 systemctl --user status pulseaudio.socket
 pkg_install docker
 sudo gpasswd -a $(whoami) docker
-pkg_install zaproxy exiftool gimp texlive-most texlive-lang biber
+pkg_install exiftool gimp texlive-most texlive-lang biber
 
-case "$PKG_MGR" in
-	pacman)
-		# Install AUR helper - yay
-		git clone https://aur.archlinux.org/yay.git
-		cd yay
-		makepkg -si
-		echo "yay AUR helper installed successfully"
-		cd ..
-		
-		# Install Brave browser
-		yay brave-bin
-		echo "Brave browser installed."
-		;;
-esac
+# Install Brave browser
+yay brave-bin
+echo "Brave browser installed."
+
+# set wallpaper
+fehbg --bg-fill wall.png
 
 # Clean up and create symbolic links
 cd ~
@@ -123,9 +130,34 @@ ln -s $REPDIR/dotfiles-laptop/.xprofile
 ln -s $REPDIR/dotfiles-laptop/.zprofile
 ln -s $REPDIR/dotfiles-laptop/.zshrc
 
-pkg_install go syncthing
+# install virtualization tools
+pkg_install qemu libvirt virt-manager 
+sudo systemctl start libvirtd
+sudo systemctl enable libvirtd
+sudo systemctl start virtlogd
+sudo gpasswd -a $(whoami) kvm
+sudo cp polkit-1/rules.d/50-libvirt.rules /etc/polkit-1/rules.d/50-libvirt.rules
+pkg_install ebtables dnsmasq bridge-utils
 
-# set wallpaper
-fehbg --bg-fill wall.png
+pkg_install python-pip
+pip install termcolor
+
+# android phone stuff
+pkg_install android-tools android-udev
+
+# extra stuff
+
+pkg_install discord
+
+pkg_install go syncthing nmap wireshark-qt zaproxy
+
+yay wfuzz
+
+yay burpsuite
+
+pkg_install john
 
 echo "Configuration is now finished."
+
+# configure displays
+xrandr --output "DVI-I-2" --primary --auto --output "DVI-I-1" --right-of "DVI-I-2" --auto
