@@ -52,3 +52,4 @@ sxhkd &
 #done &
 
 dwmblocks &
+xrandr --output "DVI-I-2" --primary --auto --output "DVI-I-1" --right-of "DVI-I-2" --auto
