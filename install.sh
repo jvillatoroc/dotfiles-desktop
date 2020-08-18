@@ -40,7 +40,7 @@ esac
 case "$PKG_MGR" in
 	pacman)
 		pkg_install xorg-server xorg-apps
-		pkg_install xf86-video-intel mesa nvidia xorg-xinit
+		pkg_install xf86-video-intel mesa xorg-xinit
 		pkg_install ttf-linux-libertine ttf-inconsolata noto-fonts noto-fonts-cjk noto-fonts-emoji
 		pkg_install base-devel gcc make
 		yay nvidia-390xx-dkms
