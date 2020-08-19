@@ -36,6 +36,9 @@ case "$PKG_MGR" in
 		;;
 esac
 
+yay -S vim-live-latex-preview
+echo "vim-live-latex-preview installed successfully"
+
 # Install graphics drivers
 case "$PKG_MGR" in
 	pacman)
