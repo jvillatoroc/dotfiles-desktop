@@ -134,7 +134,7 @@ ln -s $REPDIR/dotfiles-laptop/.zprofile
 ln -s $REPDIR/dotfiles-laptop/.zshrc
 
 # install virtualization tools
-pkg_install qemu libvirt virt-manager 
+pkg_install dmidecode qemu libvirt virt-manager 
 sudo systemctl start libvirtd
 sudo systemctl enable libvirtd
 sudo systemctl start virtlogd
