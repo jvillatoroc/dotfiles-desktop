@@ -46,7 +46,7 @@ case "$PKG_MGR" in
 		pkg_install xf86-video-intel mesa xorg-xinit
 		pkg_install ttf-linux-libertine ttf-inconsolata noto-fonts noto-fonts-cjk noto-fonts-emoji
 		pkg_install base-devel gcc make
-		yay nvidia-390xx-dkms
+		yay -S nvidia-390xx-dkms nvidia-390xx-utils lib32-nvidia-390xx-utils
 		;;
 	apt)
 		pkg_install xorg xinit
