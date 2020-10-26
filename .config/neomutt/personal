@@ -3,7 +3,7 @@ set imap_user=lacho8713@gmail.com
 set imap_pass=`pass mutt-personal`
 set folder = imaps://$imap_user@imap.gmail.com/
 set spoolfile = +INBOX
-set postponed = +[Gmail]/Drafts
+set postponed = +[Gmail]/Borradores
 set record = +[Gmail]/"Sent Mail"
 
 ## Send options.
