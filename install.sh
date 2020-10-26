@@ -163,4 +163,7 @@ pkg_install john
 echo "Configuration is now finished."
 
 # configure displays
-xrandr --output "DVI-I-2" --primary --auto --output "DVI-I-1" --right-of "DVI-I-2" --auto
+xrandr --output "DVI-I-1" --primary --auto --output "DVI-I-2" --right-of "DVI-I-1" --auto
+yay -S lib32-nvidia-390xx-utils
+yay -S nvidia-390xx-dkms
+xrandr --output DVI-I-1 --primary --auto --output DVI-I-2 --right-of DVI-I-1 --auto
