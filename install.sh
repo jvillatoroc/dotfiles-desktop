@@ -90,7 +90,7 @@ make clean && make && sudo make install
 echo "dwm installed successfully"
 cd ..
 
-pkg_install compton
+pkg_install compton sxhkd
 
 # Install my st build
 git clone https://github.com/jvillatoroc/st.git
@@ -102,8 +102,16 @@ cd ..
 
 # Install required programs
 pkg_install neomutt irssi mpd ncmpcpp calcurse newsboat mpv streamlink
-pkg_install alsamixer pulseaudio pulseaudio-alsa pavucontrol
+pkg_install alsamixer pulseaudio
+pkg_install alsa-utils pulseaudio-alsa
+pkg_install pamixer pulsemixer
+alsamixer
+systemctl --user start pulseaudio.socket
+systemctl --user enable pulseaudio.socket
+systemctl --user start pulseaudio.service
+systemctl --user enable pulseaudio.service
 systemctl --user status pulseaudio.socket
+
 pkg_install docker
 sudo gpasswd -a $(whoami) docker
 pkg_install exiftool gimp texlive-most texlive-lang biber
@@ -163,8 +171,8 @@ yay burpsuite
 
 pkg_install john
 
-echo "Configuration is now finished."
-
 # configure displays
 #xrandr --output "DVI-I-1" --primary --auto --output "DVI-I-2" --right-of "DVI-I-1" --auto
 xrandr --output DVI-I-1 --primary --auto --output DVI-I-2 --right-of DVI-I-1 --auto
+
+echo "Configuration is now finished."
