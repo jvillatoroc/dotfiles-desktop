@@ -79,6 +79,9 @@ make clean && make && sudo make install
 echo "dmenu installed successfully"
 cd ..
 
+# install password manager
+pkg_install pass
+
 # Install my dwm build
 git clone https://github.com/jvillatoroc/dwm.git
 cd dwm
@@ -163,7 +166,5 @@ pkg_install john
 echo "Configuration is now finished."
 
 # configure displays
-xrandr --output "DVI-I-1" --primary --auto --output "DVI-I-2" --right-of "DVI-I-1" --auto
-yay -S lib32-nvidia-390xx-utils
-yay -S nvidia-390xx-dkms
+#xrandr --output "DVI-I-1" --primary --auto --output "DVI-I-2" --right-of "DVI-I-1" --auto
 xrandr --output DVI-I-1 --primary --auto --output DVI-I-2 --right-of DVI-I-1 --auto
