@@ -72,6 +72,7 @@ echo "dotfiles cloned successfully"
 cd ..
 
 # Install dmenu
+pkg_install dmenu
 git clone https://git.suckless.org/dmenu
 cd dmenu
 ln -s config.def.h config.h
