@@ -124,27 +124,6 @@ echo "Brave browser installed."
 # set wallpaper
 fehbg --bg-fill wall.png
 
-# Clean up and create symbolic links
-cd ~
-rm -r .bashrc .bash_profile .calcurse .config .fehbg .irssi .local .ncmpcpp
-rm -r .newsboat .oh-my-zsh .vim .vimrc .xinitrc .Xreources .xprofile .zprofile
-ln -s $REPDIR/dotfiles-laptop/.bash_profile
-ln -s $REPDIR/dotfiles-laptop/.calcurse
-ln -s $REPDIR/dotfiles-laptop/.config
-ln -s $REPDIR/dotfiles-laptop/.fehbg
-ln -s $REPDIR/dotfiles-laptop/.irssi
-ln -s $REPDIR/dotfiles-laptop/.local
-ln -s $REPDIR/dotfiles-laptop/.ncmpcpp
-ln -s $REPDIR/dotfiles-laptop/.newsboat
-ln -s $REPDIR/dotfiles-laptop/.oh-my-zsh
-ln -s $REPDIR/dotfiles-laptop/.vim
-ln -s $REPDIR/dotfiles-laptop/.vimrc
-ln -s $REPDIR/dotfiles-laptop/.xinitrc
-ln -s $REPDIR/dotfiles-laptop/.Xresources
-ln -s $REPDIR/dotfiles-laptop/.xprofile
-ln -s $REPDIR/dotfiles-laptop/.zprofile
-ln -s $REPDIR/dotfiles-laptop/.zshrc
-
 # install virtualization tools
 pkg_install dmidecode qemu libvirt virt-manager 
 sudo systemctl start libvirtd
@@ -171,6 +150,32 @@ yay wfuzz
 yay burpsuite
 
 pkg_install john
+
+# Clean up and create symbolic links
+cd ~
+rm -r .bashrc .bash_profile .calcurse .config .fehbg .irssi .local .ncmpcpp
+rm -r .newsboat .oh-my-zsh .vim .vimrc .xinitrc .Xreources .xprofile .zprofile
+ln -s $REPDIR/dotfiles-laptop/.bash_profile
+ln -s $REPDIR/dotfiles-laptop/.calcurse
+ln -s $REPDIR/dotfiles-laptop/.config
+ln -s $REPDIR/dotfiles-laptop/.fehbg
+ln -s $REPDIR/dotfiles-laptop/.irssi
+ln -s $REPDIR/dotfiles-laptop/.local
+ln -s $REPDIR/dotfiles-laptop/.lf
+ln -s $REPDIR/dotfiles-laptop/.ncmpcpp
+ln -s $REPDIR/dotfiles-laptop/.newsboat
+ln -s $REPDIR/dotfiles-laptop/.oh-my-zsh
+ln -s $REPDIR/dotfiles-laptop/.vim
+ln -s $REPDIR/dotfiles-laptop/.vimrc
+ln -s $REPDIR/dotfiles-laptop/.xinitrc
+ln -s $REPDIR/dotfiles-laptop/.Xresources
+ln -s $REPDIR/dotfiles-laptop/.xprofile
+ln -s $REPDIR/dotfiles-laptop/.zprofile
+ln -s $REPDIR/dotfiles-laptop/.zshrc
+yay -S libxft-bgra
+sudo pacman -S zathura
+sudo pacman -S zathura-djvu zathura-pdf-mupdf
+yay -S lf-bin
 
 # configure displays
 #xrandr --output "DVI-I-1" --primary --auto --output "DVI-I-2" --right-of "DVI-I-1" --auto
