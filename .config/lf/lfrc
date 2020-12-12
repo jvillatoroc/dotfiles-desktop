@@ -39,13 +39,16 @@ cmd open ${{
     case $(file --mime-type $f -b) in
         text/*) $EDITOR $fx;;
 	# ods files
-	application/vnd.oasis.opendocument.spreadsheet) libreoffice $fx;;
-	# pdf files
-	application/pdf) zathura $fx;;
+	*.ods*) libreoffice $fx &;;
 	# odt files
-	application/vnd.oasis.opendocument.text) libreoffice $fx;;
+	*.odt*) libreoffice $fx &;;
 	# docx files
-	application/octet-stream) libreoffice $fx;;
+	*.doc*) libreoffice $fx &;;
+	*.docx*) libreoffice $fx &;;
+	# .chm files
+	*.chm*) xchm $fx;;
+	# pdf files
+	application/pdf) zathura $fx &;;
         *) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
     esac
 }}
