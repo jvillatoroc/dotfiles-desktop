@@ -36,27 +36,28 @@ case "$PKG_MGR" in
 		;;
 esac
 
-yay -S vim-live-latex-preview
+yay -S vim-live-latex-preview --mflags --skipchecksums
 echo "vim-live-latex-preview installed successfully"
 
 # Install graphics drivers
 case "$PKG_MGR" in
 	pacman)
-		pkg_install xorg-server xorg-apps
-		pkg_install xf86-video-intel mesa xorg-xinit
+		pkg_install xorg-server xorg-apps xorg-xinit
+		# video card driver should go here
+		pkg_install mesa
 		pkg_install ttf-linux-libertine ttf-inconsolata noto-fonts noto-fonts-cjk noto-fonts-emoji
 		pkg_install base-devel gcc make
-		yay -S nvidia-390xx-dkms nvidia-390xx-utils lib32-nvidia-390xx-utils
 		;;
 	apt)
 		pkg_install xorg xinit
-		pkg_install nvidia-detect nvidia-legacy-390xx-driver
+		# video card driver should go here
 		pkg_install fonts-linuxlibertine fonts-inconsolata fonts-noto fonts-noto-cjk fonts-noto-colo-emoji
 		pkg_install build-essential suckless-tools dwm
 		;;
 esac
 
 sudo cp X11/xorg.conf.d/00-keyboard.conf /etc/X11/xorg.conf.d/00-keyboard.conf
+sudo cp X11/xorg.conf.d/20-nvidia.conf /etc/X11/xorg.conf.d/20-nvidia.conf
 
 pkg_install gnupg feh
 
@@ -81,7 +82,7 @@ echo "dmenu installed successfully"
 cd ..
 
 # install password manager
-pkg_install pass
+pkg_install pass dialog
 
 # Install my dwm build
 git clone https://github.com/jvillatoroc/dwm.git
@@ -102,7 +103,7 @@ echo "st installed successfully"
 cd ..
 
 # Install required programs
-pkg_install neomutt irssi mpd ncmpcpp calcurse newsboat mpv streamlink
+pkg_install neomutt urlscan irssi mpd ncmpcpp calcurse newsboat mpv streamlink
 pkg_install alsamixer pulseaudio
 pkg_install alsa-utils pulseaudio-alsa
 pkg_install pamixer pulsemixer
@@ -115,7 +116,7 @@ systemctl --user status pulseaudio.socket
 
 pkg_install docker
 sudo gpasswd -a $(whoami) docker
-pkg_install exiftool gimp texlive-most texlive-lang biber
+pkg_install exiftool gimp texlive-most texlive-lang biber pdflatex
 
 # Install Brave browser
 yay brave-bin
@@ -171,7 +172,6 @@ ln -s $REPDIR/dotfiles-laptop/.xinitrc
 ln -s $REPDIR/dotfiles-laptop/.Xresources
 ln -s $REPDIR/dotfiles-laptop/.xprofile
 ln -s $REPDIR/dotfiles-laptop/.zprofile
-ln -s $REPDIR/dotfiles-laptop/.zshrc
 yay -S libxft-bgra
 sudo pacman -S zathura
 sudo pacman -S zathura-djvu zathura-pdf-mupdf
