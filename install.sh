@@ -62,7 +62,7 @@ sudo cp X11/xorg.conf.d/00-keyboard.conf /etc/X11/xorg.conf.d/00-keyboard.conf
 pkg_install gnupg feh
 
 # Setup Repos directory
-REPDIR=~/Repos
+REPDIR=~/git
 mkdir $REPDIR
 cd $REPDIR
 
