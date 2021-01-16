@@ -114,7 +114,7 @@ systemctl --user start pulseaudio.service
 systemctl --user enable pulseaudio.service
 systemctl --user status pulseaudio.socket
 
-pkg_install docker
+pkg_install docker docker-compose
 sudo gpasswd -a $(whoami) docker
 pkg_install exiftool gimp texlive-most texlive-lang biber pdflatex
 
