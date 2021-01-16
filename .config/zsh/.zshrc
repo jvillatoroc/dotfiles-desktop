@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH:/opt:$HOME/.local/bin:/home/jonathan/.vim/bundle/vim-live-latex-preview/bin
+export PATH=$HOME/bin:/usr/local/bin:$PATH:/opt:$HOME/.local/bin:/home/jonathan/.vim/bundle/vim-live-latex-preview/bin:/opt/android-sdk/tools/bin:$HOME/Android/Sdk/tools:$HOME/Android/Sdk/platform-tools:
 
 # NNN configs
 export NNN_PLUG='f:finder;o:fzopen;d:diffs;t:nmount;v:imgview'
