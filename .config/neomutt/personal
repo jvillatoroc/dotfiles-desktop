@@ -4,7 +4,7 @@ set imap_pass=`pass mutt-personal`
 set folder = imaps://$imap_user@imap.gmail.com/
 set spoolfile = +INBOX
 set postponed = +[Gmail]/Borradores
-set record = +[Gmail]/"Sent Mail"
+set record = +[Gmail]/"Enviados"
 
 ## Send options.
 unset from
