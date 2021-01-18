@@ -67,8 +67,8 @@ mkdir $REPDIR
 cd $REPDIR
 
 # Clone my dotfiles
-git clone https://github.com/jvillatoroc/dotfiles-laptop.git
-cd dotfiles-laptop
+git clone https://github.com/jvillatoroc/dotfiles-desktop.git
+cd dotfiles-desktop
 echo "dotfiles cloned successfully"
 cd ..
 
@@ -156,22 +156,22 @@ pkg_install john
 cd ~
 rm -r .bashrc .bash_profile .calcurse .config .fehbg .irssi .local .ncmpcpp
 rm -r .newsboat .oh-my-zsh .vim .vimrc .xinitrc .Xreources .xprofile .zprofile
-ln -s $REPDIR/dotfiles-laptop/.bash_profile
-ln -s $REPDIR/dotfiles-laptop/.calcurse
-ln -s $REPDIR/dotfiles-laptop/.config
-ln -s $REPDIR/dotfiles-laptop/.fehbg
-ln -s $REPDIR/dotfiles-laptop/.irssi
-ln -s $REPDIR/dotfiles-laptop/.local
-ln -s $REPDIR/dotfiles-laptop/.lf
-ln -s $REPDIR/dotfiles-laptop/.ncmpcpp
-ln -s $REPDIR/dotfiles-laptop/.newsboat
-ln -s $REPDIR/dotfiles-laptop/.oh-my-zsh
-ln -s $REPDIR/dotfiles-laptop/.vim
-ln -s $REPDIR/dotfiles-laptop/.vimrc
-ln -s $REPDIR/dotfiles-laptop/.xinitrc
-ln -s $REPDIR/dotfiles-laptop/.Xresources
-ln -s $REPDIR/dotfiles-laptop/.xprofile
-ln -s $REPDIR/dotfiles-laptop/.zprofile
+ln -s $REPDIR/dotfiles-desktop/.bash_profile
+ln -s $REPDIR/dotfiles-desktop/.calcurse
+ln -s $REPDIR/dotfiles-desktop/.config
+ln -s $REPDIR/dotfiles-desktop/.fehbg
+ln -s $REPDIR/dotfiles-desktop/.irssi
+ln -s $REPDIR/dotfiles-desktop/.local
+ln -s $REPDIR/dotfiles-desktop/.lf
+ln -s $REPDIR/dotfiles-desktop/.ncmpcpp
+ln -s $REPDIR/dotfiles-desktop/.newsboat
+ln -s $REPDIR/dotfiles-desktop/.oh-my-zsh
+ln -s $REPDIR/dotfiles-desktop/.vim
+ln -s $REPDIR/dotfiles-desktop/.vimrc
+ln -s $REPDIR/dotfiles-desktop/.xinitrc
+ln -s $REPDIR/dotfiles-desktop/.Xresources
+ln -s $REPDIR/dotfiles-desktop/.xprofile
+ln -s $REPDIR/dotfiles-desktop/.zprofile
 yay -S libxft-bgra
 sudo pacman -S zathura
 sudo pacman -S zathura-djvu zathura-pdf-mupdf
