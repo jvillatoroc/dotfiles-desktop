@@ -67,7 +67,7 @@ mkdir $REPDIR
 cd $REPDIR
 
 # Clone my dotfiles
-git clone https://github.com/jvillatoroc/dotfiles-desktop.git
+git clone git@github.com:jvillatoroc/dotfiles-desktop.git
 cd dotfiles-desktop
 echo "dotfiles cloned successfully"
 cd ..
@@ -85,17 +85,25 @@ cd ..
 pkg_install pass dialog
 
 # Install my dwm build
-git clone https://github.com/jvillatoroc/dwm.git
+git clone git@github.com:jvillatoroc/dwm.git
 cd dwm
 ln -s config.def.h config.h
 make clean && make && sudo make install
-echo "dwm installed successfully"
 cd ..
+echo "dwm installed successfully"
+
+# Install my dwmblocks build
+git clone git@github.com:jvillatoroc/dwmblocks.git
+cd dwm
+ln -s config.def.h config.h
+make clean && make && sudo make install
+cd ..
+echo "dwmblocks installed successfully"
 
 pkg_install compton sxhkd
 
 # Install my st build
-git clone https://github.com/jvillatoroc/st.git
+git clone git@github.com:jvillatoroc/st.git
 cd st
 ln -s config.def.h config.h
 make clean && make && sudo make install
