@@ -1,6 +1,11 @@
 #!/bin/bash
 OS=$(grep "^ID" /etc/os-release | cut -d '=' -f 2)
 
+# Setup Repos directory
+REPDIR=~/git
+mkdir $REPDIR
+cd $REPDIR
+
 case "$OS" in
 	arch) PKG_MGR="pacman" ;;
 	debian) PKG_MGR="apt" ;;
@@ -32,7 +37,7 @@ case "$PKG_MGR" in
 		cd yay
 		makepkg -si
 		echo "yay AUR helper installed successfully"
-		cd ..
+		cd $REPDIR
 		;;
 esac
 
@@ -58,11 +63,6 @@ sudo cp X11/xorg.conf.d/00-keyboard.conf /etc/X11/xorg.conf.d/00-keyboard.conf
 
 pkg_install gnupg feh
 
-# Setup Repos directory
-REPDIR=~/git
-mkdir $REPDIR
-cd $REPDIR
-
 # Install vim-live-latex-preview
 mkdir ~/.vim/bundle
 cd ~/.vim/bundle
@@ -74,7 +74,7 @@ echo "vim-live-latex-preview installed successfully"
 git clone git@github.com:jvillatoroc/dotfiles-desktop.git
 cd dotfiles-desktop
 echo "dotfiles cloned successfully"
-cd ..
+cd $REPDIR
 
 # Install dmenu
 pkg_install dmenu
@@ -83,7 +83,7 @@ cd dmenu
 ln -s config.def.h config.h
 make clean && make && sudo make install
 echo "dmenu installed successfully"
-cd ..
+cd $REPDIR
 
 # install password manager
 pkg_install pass dialog
@@ -93,7 +93,7 @@ git clone git@github.com:jvillatoroc/dwm.git
 cd dwm
 ln -s config.def.h config.h
 make clean && make && sudo make install
-cd ..
+cd $REPDIR
 echo "dwm installed successfully"
 
 # Install my dwmblocks build
@@ -101,7 +101,7 @@ git clone git@github.com:jvillatoroc/dwmblocks.git
 cd dwm
 ln -s config.def.h config.h
 make clean && make && sudo make install
-cd ..
+cd $REPDIR
 echo "dwmblocks installed successfully"
 
 pkg_install compton sxhkd
@@ -112,7 +112,7 @@ cd st
 ln -s config.def.h config.h
 make clean && make && sudo make install
 echo "st installed successfully"
-cd ..
+cd $REPDIR
 
 # Install required programs
 pkg_install neomutt urlscan irssi mpd ncmpcpp calcurse newsboat mpv streamlink
