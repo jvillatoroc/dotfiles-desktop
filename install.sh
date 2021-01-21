@@ -36,9 +36,6 @@ case "$PKG_MGR" in
 		;;
 esac
 
-yay -S vim-live-latex-preview --mflags --skipchecksums
-echo "vim-live-latex-preview installed successfully"
-
 # Install graphics drivers
 case "$PKG_MGR" in
 	pacman)
@@ -65,6 +62,13 @@ pkg_install gnupg feh
 REPDIR=~/git
 mkdir $REPDIR
 cd $REPDIR
+
+# Install vim-live-latex-preview
+mkdir ~/.vim/bundle
+cd ~/.vim/bundle
+git clone https://github.com/goballooning/vim-live-latex-preview.git
+cd $REPDIR
+echo "vim-live-latex-preview installed successfully"
 
 # Clone my dotfiles
 git clone git@github.com:jvillatoroc/dotfiles-desktop.git
