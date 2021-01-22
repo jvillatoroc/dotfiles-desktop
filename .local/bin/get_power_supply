@@ -1,8 +1,18 @@
 #!/bin/bash
 
-if [[ -f /sys/class/power_supply/BAT0 ]]
+if [[ -d /sys/class/power_supply/BAT0 ]]
 then
-	acpi | awk '{ print ($3 == "Discharging,") ? "🔋 " $4 $5 : "🔌 " $4 }' | sed 's/,/\ /g'
+	#acpi | awk '{ print ($3 == "Discharging,") ? "🔋 " $4 $5 : "🔌 " $4 }' | sed 's/,/\ /g'
+	BATTERY="/sys/class/power_supply/BAT0"
+	status=$(cat "$BATTERY/status")
+	case "$status" in
+		"Full") status="⚡" ;;
+		"Discharging") status="🔋 " ;;
+		"Not charging") status="🛑 " ;;
+		"Unknown") status="♻️ " ;;
+	esac
+	capacity=$(cat "$BATTERY/capacity")
+	printf "%s %s%%\n" "$status" "$capacity"
 else
-	printf "🔌"
+	printf "🔌 No battery found" && exit 1
 fi
