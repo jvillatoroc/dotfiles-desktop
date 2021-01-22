@@ -144,7 +144,7 @@ sudo systemctl enable libvirtd
 sudo systemctl start virtlogd
 sudo gpasswd -a $(whoami) kvm
 sudo cp polkit-1/rules.d/50-libvirt.rules /etc/polkit-1/rules.d/50-libvirt.rules
-pkg_install ebtables dnsmasq bridge-utils
+pkg_install ebtables dnsmasq bridge-utils openbsd-netcat
 
 pkg_install python-pip
 pip install termcolor
@@ -191,6 +191,7 @@ yay -S lf-bin
 
 # configure displays
 #xrandr --output "DVI-I-1" --primary --auto --output "DVI-I-2" --right-of "DVI-I-1" --auto
-xrandr --output DVI-I-1 --primary --auto --output DVI-I-2 --right-of DVI-I-1 --auto
+#xrandr --output DVI-I-1 --primary --auto --output DVI-I-2 --right-of DVI-I-1 --auto
+pkg_install tmux man-db man-pages texinfo
 
 echo "Configuration is now finished."
