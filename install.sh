@@ -139,12 +139,13 @@ fehbg --bg-fill wall.png
 
 # install virtualization tools
 pkg_install dmidecode qemu libvirt virt-manager 
-sudo systemctl start libvirtd
-sudo systemctl enable libvirtd
-sudo systemctl start virtlogd
 sudo gpasswd -a $(whoami) kvm
 sudo cp polkit-1/rules.d/50-libvirt.rules /etc/polkit-1/rules.d/50-libvirt.rules
 pkg_install ebtables dnsmasq bridge-utils openbsd-netcat
+sudo systemctl start libvirtd
+sudo systemctl enable libvirtd
+sudo systemctl start virtlogd
+echo "Virtualization tools installed."
 
 pkg_install python-pip
 pip install termcolor
@@ -193,5 +194,19 @@ yay -S lf-bin
 #xrandr --output "DVI-I-1" --primary --auto --output "DVI-I-2" --right-of "DVI-I-1" --auto
 #xrandr --output DVI-I-1 --primary --auto --output DVI-I-2 --right-of DVI-I-1 --auto
 pkg_install tmux man-db man-pages texinfo
+
+# configure printing
+pkg_instal cups cups-pdf cups-filters ghostscript gutenprint footmatic-db-gutenprint-ppds
+sudo systemctl enable cups.socket
+sudo systemctl start cups.socket
+echo "cups.socket is now enabled and started."
+# also install and configre avahi and nsswitch
+pkg_install avahi nss-mdns
+sudo cp nsswitch.conf /etc/nsswitch.conf
+sudo systemctl enable avahi-daemon
+sudo systemctl start avahi-daemon
+sudo systemctl restart cups.socket
+echo "Printing is now configured successfully.\n"
+echo "remember to go to http://localhost:631/ to add a new printer."
 
 echo "Configuration is now finished."
