@@ -126,8 +126,12 @@ systemctl --user start pulseaudio.service
 systemctl --user enable pulseaudio.service
 systemctl --user status pulseaudio.socket
 
+# Install and configure docker
 pkg_install docker docker-compose
 sudo gpasswd -a $(whoami) docker
+sudo systemctl enable docker
+sudo systemctl start docker
+
 pkg_install exiftool gimp texlive-most texlive-lang biber pdflatex
 
 # Install Brave browser
