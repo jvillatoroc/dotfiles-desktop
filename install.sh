@@ -115,7 +115,7 @@ echo "st installed successfully"
 cd $REPDIR
 
 # Install required programs
-pkg_install neomutt urlscan irssi mpd ncmpcpp calcurse newsboat mpv streamlink
+pkg_install neomutt w3m urlscan irssi mpd ncmpcpp calcurse newsboat mpv streamlink
 pkg_install alsamixer pulseaudio
 pkg_install alsa-utils pulseaudio-alsa
 pkg_install pamixer pulsemixer
