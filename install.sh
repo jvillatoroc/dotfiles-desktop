@@ -209,4 +209,13 @@ sudo systemctl restart cups.socket
 echo "Printing is now configured successfully.\n"
 echo "remember to go to http://localhost:631/ to add a new printer."
 
+# install transmission for handdling torrents
+pkg_install transmission-cli
+yay -S tremc
+sudo mkdir -p /etc/systemd/system/transmission.service.d/
+sudo cp systemd/system/transmission.service.d/username.conf /etc/systemd/system/transmission.service.d/
+sudo systemctl enable transmission
+sudo systemctl start transmission
+echo "Transmission has now been configured successfully
+
 echo "Configuration is now finished."
