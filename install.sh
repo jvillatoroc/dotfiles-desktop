@@ -47,7 +47,8 @@ case "$PKG_MGR" in
 		pkg_install xorg-server xorg-apps xorg-xinit
 		# video card driver should go here
 		pkg_install mesa
-		pkg_install ttf-linux-libertine ttf-inconsolata noto-fonts noto-fonts-cjk noto-fonts-emoji
+		pkg_install ttf-linux-libertine ttf-inconsolata ttf-joy-pixels 
+		pkg_install noto-fonts noto-fonts-cjk noto-fonts-emoji
 		pkg_install base-devel gcc make
 		;;
 	apt)
@@ -61,7 +62,7 @@ esac
 sudo cp X11/xorg.conf.d/00-keyboard.conf /etc/X11/xorg.conf.d/00-keyboard.conf
 #sudo cp X11/xorg.conf.d/20-nvidia.conf /etc/X11/xorg.conf.d/20-nvidia.conf
 
-pkg_install gnupg feh
+pkg_install gnupg feh zip unzip
 
 # Install vim-live-latex-preview
 mkdir ~/.vim/bundle
@@ -163,36 +164,17 @@ pkg_install discord
 
 pkg_install go syncthing nmap wireshark-qt zaproxy
 
-yay wfuzz
+yay -S wfuzz
 
-yay burpsuite
+yay -S burpsuite
 
 pkg_install john
-
-# Clean up and create symbolic links
-cd ~
-rm -r .bashrc .bash_profile .calcurse .config .fehbg .irssi .local .ncmpcpp
-rm -r .newsboat .oh-my-zsh .vim .vimrc .xinitrc .Xreources .xprofile .zprofile
-ln -s $REPDIR/dotfiles-desktop/.bash_profile
-ln -s $REPDIR/dotfiles-desktop/.calcurse
-ln -s $REPDIR/dotfiles-desktop/.config
-ln -s $REPDIR/dotfiles-desktop/.fehbg
-ln -s $REPDIR/dotfiles-desktop/.irssi
-ln -s $REPDIR/dotfiles-desktop/.local
-ln -s $REPDIR/dotfiles-desktop/.lf
-ln -s $REPDIR/dotfiles-desktop/.ncmpcpp
-ln -s $REPDIR/dotfiles-desktop/.newsboat
-ln -s $REPDIR/dotfiles-desktop/.oh-my-zsh
-ln -s $REPDIR/dotfiles-desktop/.vim
-ln -s $REPDIR/dotfiles-desktop/.vimrc
-ln -s $REPDIR/dotfiles-desktop/.xinitrc
-ln -s $REPDIR/dotfiles-desktop/.Xresources
-ln -s $REPDIR/dotfiles-desktop/.xprofile
-ln -s $REPDIR/dotfiles-desktop/.zprofile
+pkg_install zathura
+pkg_install zathura-djvu zathura-pdf-mupdf
 yay -S libxft-bgra
-sudo pacman -S zathura
-sudo pacman -S zathura-djvu zathura-pdf-mupdf
 yay -S lf-bin
+
+yay -S castero
 
 # configure displays
 #xrandr --output "DVI-I-1" --primary --auto --output "DVI-I-2" --right-of "DVI-I-1" --auto
@@ -220,6 +202,32 @@ sudo mkdir -p /etc/systemd/system/transmission.service.d/
 sudo cp systemd/system/transmission.service.d/username.conf /etc/systemd/system/transmission.service.d/
 sudo systemctl enable transmission
 sudo systemctl start transmission
-echo "Transmission has now been configured successfully
+echo "Transmission has now been configured successfully"
+
+pkg_install bluez bluez-utils
+sudo systemctl enable bluetooth
+sudo systemctl start bluetooth
+echo "Bluetooth has now been configured successfully"
+
+# Clean up and create symbolic links
+cd ~
+rm -r .bashrc .bash_profile .calcurse .config .fehbg .irssi .local .ncmpcpp
+rm -r .newsboat .oh-my-zsh .vim .vimrc .xinitrc .Xreources .xprofile .zprofile
+ln -s $REPDIR/dotfiles-desktop/.bash_profile
+ln -s $REPDIR/dotfiles-desktop/.calcurse
+ln -s $REPDIR/dotfiles-desktop/.config
+ln -s $REPDIR/dotfiles-desktop/.fehbg
+ln -s $REPDIR/dotfiles-desktop/.irssi
+ln -s $REPDIR/dotfiles-desktop/.local
+ln -s $REPDIR/dotfiles-desktop/.lf
+ln -s $REPDIR/dotfiles-desktop/.ncmpcpp
+ln -s $REPDIR/dotfiles-desktop/.newsboat
+ln -s $REPDIR/dotfiles-desktop/.oh-my-zsh
+ln -s $REPDIR/dotfiles-desktop/.vim
+ln -s $REPDIR/dotfiles-desktop/.vimrc
+ln -s $REPDIR/dotfiles-desktop/.xinitrc
+ln -s $REPDIR/dotfiles-desktop/.Xresources
+ln -s $REPDIR/dotfiles-desktop/.xprofile
+ln -s $REPDIR/dotfiles-desktop/.zprofile
 
 echo "Configuration is now finished."
