@@ -7,6 +7,7 @@ then
 	status=$(cat "$BATTERY/status")
 	case "$status" in
 		"Full") status="⚡" ;;
+		"Charging") status="🔌 " ;;
 		"Discharging") status="🔋 " ;;
 		"Not charging") status="🛑 " ;;
 		"Unknown") status="♻️ " ;;
