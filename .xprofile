@@ -30,6 +30,11 @@ fi
 # setting required for Android Studio to run on dwm
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+# font setting required for ZAProxy and maybe burp
+_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+
+
 # start Dropbox client automatically
 dropbox &
 
