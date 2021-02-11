@@ -32,11 +32,11 @@ chsh -s /bin/zsh
 
 case "$PKG_MGR" in
 	pacman)
-		# Install AUR helper - yay
-		git clone https://aur.archlinux.org/yay.git
-		cd yay
+		# Install AUR helper - paru
+		git clone https://aur.archlinux.org/paru.git
+		cd paru
 		makepkg -si
-		echo "yay AUR helper installed successfully"
+		echo "paru AUR helper installed successfully"
 		cd $REPDIR
 		;;
 esac
@@ -136,7 +136,7 @@ sudo systemctl start docker
 pkg_install exiftool gimp texlive-most texlive-lang biber pdflatex
 
 # Install Brave browser
-yay brave-bin
+paru brave-bin
 echo "Brave browser installed."
 
 # set wallpaper
@@ -164,17 +164,17 @@ pkg_install discord
 
 pkg_install go syncthing nmap wireshark-qt zaproxy
 
-yay -S wfuzz
+paru -S wfuzz
 
-yay -S burpsuite
+paru -S burpsuite
 
 pkg_install john
 pkg_install zathura
 pkg_install zathura-djvu zathura-pdf-mupdf
-yay -S libxft-bgra
-yay -S lf-bin
+paru -S libxft-bgra
+paru -S lf-bin
 
-yay -S castero
+paru -S castero
 
 # configure displays
 #xrandr --output "DVI-I-1" --primary --auto --output "DVI-I-2" --right-of "DVI-I-1" --auto
@@ -197,7 +197,7 @@ echo "remember to go to http://localhost:631/ to add a new printer."
 
 # install transmission for handdling torrents
 pkg_install transmission-cli
-yay -S tremc
+paru -S tremc
 sudo mkdir -p /etc/systemd/system/transmission.service.d/
 sudo cp systemd/system/transmission.service.d/username.conf /etc/systemd/system/transmission.service.d/
 sudo systemctl enable transmission
