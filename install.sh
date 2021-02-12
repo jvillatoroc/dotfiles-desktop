@@ -162,6 +162,8 @@ pkg_install android-tools android-udev
 
 pkg_install discord
 
+sudo cp environment /etc/environment
+
 pkg_install go syncthing nmap wireshark-qt zaproxy
 
 paru -S wfuzz
