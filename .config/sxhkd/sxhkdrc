@@ -45,4 +45,4 @@ super + shift + n
 
 # launch file manager
 super + shift + f
-	st -e lf
+	st -e ranger

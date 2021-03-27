@@ -174,7 +174,7 @@ pkg_install john
 pkg_install zathura
 pkg_install zathura-djvu zathura-pdf-mupdf
 paru -S libxft-bgra
-paru -S lf-bin
+paru -S lf-bin ranger
 
 paru -S castero
 
