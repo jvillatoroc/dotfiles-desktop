@@ -8,7 +8,7 @@ syntax on			" load filetype-specific indent files
 filetype plugin indent on	" load filetype-specific indent files
 set encoding=utf-8		" set encoding to utf-8
 
-inoremap <Space><Space><Space> <Esc>/<++><Enter>"_c4l
+"inoremap <C-Space> <Esc>/<++><Enter>"_c4l
 
 autocmd FileType tex inoremap ;gr \includegraphics[width=\textwidth]{}<Space><++><Esc>B2hi
 
